@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "target": "es2022",
+        "module": "es2022",
+        "lib": [
+            "DOM",
+            "ES2022"
+        ],
+        "strict": true,
+        "incremental": true,
+        "moduleResolution": "node",
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true,
+        "isolatedModules": true,
+        "emitDeclarationOnly": true,
+        "noFallthroughCasesInSwitch": true,
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "composite": true,
+        "jsx": "react-jsx"
+    },
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
