@@ -1,10 +1,10 @@
 import fs from 'node:fs'
-import path from 'node:path'
 import { createRequire } from 'node:module'
+import path from 'node:path'
 import process from 'node:process'
 
-import { sync as globSync } from 'glob'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
+import { sync as globSync } from 'glob'
 import { rollup } from 'rollup'
 import { swc } from 'rollup-plugin-swc3'
 
@@ -62,6 +62,8 @@ const checkAllowedAttr = (attr, value) => {
     if (attr === 'fill') {
         if (value === 'none') return true
         if (value === '#000') return true
+        if (value === '#121212') return true
+        if (value === 'currentColor') return true
     }
     if (attr === 'fill-rule' && value === 'nonzero') return true
     return false
@@ -95,6 +97,9 @@ const components = await Promise.all(
             }
             if (attrs.fill === 'none') {
                 continue
+            }
+            else if (attrs.fill) {
+                attrs.fill = 'currentColor'
             }
             allPaths.push(attrs)
         }
